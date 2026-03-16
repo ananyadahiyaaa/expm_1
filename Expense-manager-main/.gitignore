@@ -1,0 +1,11 @@
+# Node
+node_modules/
+
+# Builds
+.next/
+dist/
+
+# Env
+.env
+.env.local
+.env.production

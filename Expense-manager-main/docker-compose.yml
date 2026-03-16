@@ -1,0 +1,20 @@
+# Local development: PostgreSQL only.
+# Run: docker compose up -d
+# Then: cd backend && npm run db: migrate && npm run dev
+# Frontend: cd frontend && npm run dev
+# DATABASE_URL=postgresql://postgres:postgres@localhost:5432/expense_tracker
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: expense_tracker
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
